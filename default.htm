@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Tutorial - Creating a Hello World ServiceStack Web Service</title>
+    <link rel="stylesheet" type="text/css" href="Content/Css/default.css" />
+</head>
+<body>
+
+    <a name="customroutes"></a>
+    <h2>
+        REST Web Services
+    </h2>
+
+    <p>
+        Async, custom route /hello, works:<br />
+        <form action="hello?format=json" method="post">
+            <label>
+                Name:
+            </label>
+            <input type="text" name="Name" value="World!" />
+            <input type="submit" />
+        </form>
+    </p>
+    <p>
+        Async, /json/reply/Hello?Name=john, fails:<br />
+        <form action="/json/reply/Hello" method="post">
+            <label>
+                Name:
+            </label>
+            <input type="text" name="Name" value="World!" />
+            <input type="submit" />
+        </form>
+
+    </p>
+
+    <p>
+        sync, custom route /hello-sync, works:<br />
+        <form action="hello?format=json" method="post">
+            <label>
+                Name:
+            </label>
+            <input type="text" name="Name" value="World!" />
+            <input type="submit" />
+        </form>
+    </p>
+    <p>
+        Async, /json/reply/HelloSync?Name=john, works:<br />
+        <form action="/json/reply/HelloSync" method="post">
+            <label>
+                Name:
+            </label>
+            <input type="text" name="Name" value="World!" />
+            <input type="submit" />
+        </form>
+
+    </p>
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-7722718-7']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>
